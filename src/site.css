@@ -308,6 +308,10 @@ a {
   gap: 0.9rem;
 }
 
+.contact-form h3 {
+  margin: 0 0 0.5rem;
+}
+
 .contact-form label {
   display: grid;
   gap: 0.4rem;
@@ -316,7 +320,7 @@ a {
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
+  width: 60%;
   border: 1px solid var(--line);
   border-radius: 0.9rem;
   padding: 0.9rem 1rem;
@@ -330,6 +334,15 @@ a {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 4px rgba(15, 98, 254, 0.12);
+}
+
+.contact-form button {
+  margin: 0.5rem 0 0;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  border-radius: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .contact-stack {
