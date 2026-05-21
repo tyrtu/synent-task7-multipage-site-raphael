@@ -1,6 +1,6 @@
-# Synent Task 7 - React Multi-Page Website
+# React Multi-Page Website
 
-A React-based multi-page website for the Synent Technologies internship submission.
+A React-based multi-page website.
 
 ## Pages
 - Home
