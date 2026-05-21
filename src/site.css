@@ -320,7 +320,7 @@ a {
 
 .contact-form input,
 .contact-form textarea {
-  width: 60%;
+  width: 80%;
   border: 1px solid var(--line);
   border-radius: 0.9rem;
   padding: 0.9rem 1rem;
@@ -334,6 +334,9 @@ a {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 0 4px rgba(15, 98, 254, 0.12);
+}
+.contact-form textarea {
+    width: 80%;
 }
 
 .contact-form button {
@@ -415,6 +418,24 @@ a {
 
 .footer-section ul li a:hover {
   color: var(--accent);
+}
+
+/* Improve keyboard focus visibility for footer links */
+.footer-section ul li a:focus-visible {
+  outline: 3px solid rgba(72,101,155,0.18);
+  outline-offset: 3px;
+  border-radius: 0.35rem;
+}
+
+/* Make contact form button responsive and clearly focusable */
+.contact-form button {
+  width: 100%;
+  max-width: 360px;
+}
+
+.contact-form button:focus-visible {
+  outline: 3px solid rgba(0, 179, 164, 0.18);
+  outline-offset: 3px;
 }
 
 .footer-bottom {
