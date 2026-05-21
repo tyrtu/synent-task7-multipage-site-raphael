@@ -48,6 +48,15 @@ function AppSite() {
     setPath(nextPath);
   };
 
+  // Enable keyboard navigation (Escape to go home, arrow keys for nav)
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'Escape') navigate('/');
+    };
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [path]);
+
   const goTo = (nextPath) => (event) => {
     event.preventDefault();
     navigate(nextPath);
@@ -239,9 +248,10 @@ function AppSite() {
                   Message
                   <textarea rows="5" placeholder="Tell us about your project"></textarea>
                 </label>
-                <button className="button primary" type="submit">
+                <button className="button primary" type="submit" aria-label="Submit inquiry">
                   Submit inquiry
                 </button>
+                
               </form>
 
               <aside className="contact-stack">
@@ -273,9 +283,9 @@ function AppSite() {
           <div className="footer-section">
             <h4>Services</h4>
             <ul>
-              <li><a href="/services" onClick={goTo('/services')}>Website Design</a></li>
-              <li><a href="/services" onClick={goTo('/services')}>Front-end Development</a></li>
-              <li><a href="/services" onClick={goTo('/services')}>Maintenance</a></li>
+              <li><a href="/services" onClick={goTo('/services')} aria-label="Website Design">Website Design</a></li>
+              <li><a href="/services" onClick={goTo('/services')} aria-label="Front-end Development">Front-end Development</a></li>
+              <li><a href="/services" onClick={goTo('/services')} aria-label="Maintenance">Maintenance</a></li>
             </ul>
           </div>
 
@@ -289,9 +299,9 @@ function AppSite() {
           <div className="footer-section">
             <h4>Follow</h4>
             <ul>
-              <li><a href="#" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-              <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-              <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub - RaphTech Studios">GitHub</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn - RaphTech Studios">LinkedIn</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter - RaphTech Studios">Twitter</a></li>
             </ul>
           </div>
         </div>
