@@ -1,11 +1,18 @@
 import { useEffect, useMemo, useState, useRef } from 'react';
-import { FaRocket, FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaGithub, FaQuoteLeft, FaCheckCircle, FaArrowRight, FaBars, FaTimes, FaBullseye, FaGem, FaShieldAlt, FaChartLine, FaCogs, FaUsers } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaInstagram, FaGithub, FaQuoteLeft, FaCheckCircle, FaArrowRight, FaBars, FaTimes, FaBullseye, FaGem, FaShieldAlt, FaChartLine, FaCogs, FaUsers } from 'react-icons/fa';
 import mapboxgl from 'mapbox-gl';
 import t1 from './assets/testomonial/testomonial-img1.jpg';
 import t2 from './assets/testomonial/testomonial-img2.jpg';
 import t3 from './assets/testomonial/testomonial-img3.jpg';
 import t4 from './assets/testomonial/testomonial-img4.jpg';
 import t5 from './assets/testomonial/testomonial-img5.jpg';
+import week1Img from './assets/illustrations/delivery-illustrationss/week1.jpg';
+import week2Img from './assets/illustrations/delivery-illustrationss/week2.jpg';
+import afterLaunchImg from './assets/illustrations/delivery-illustrationss/afterlaunch.svg';
+import deliveryImg from './assets/delivery.jpg';
+import missionImg from './assets/MVS/mission.svg';
+import visionImg from './assets/MVS/vision.png';
+import standardsImg from './assets/MVS/standards.jpg';
 
 const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
@@ -168,7 +175,7 @@ function App() {
           <div className="flex items-center justify-between py-4">
             <button className="flex items-center gap-3 text-left" onClick={() => navigate('/')}>
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl text-orange-950 shadow-soft" style={{ background: '#fb923c' }}>
-                <FaRocket size={18} />
+                <FaGem size={18} />
               </div>
               <div>
                 <div className="font-display text-xl font-semibold tracking-tight text-orange-900">
@@ -214,58 +221,48 @@ function App() {
           {path === '/contact' && <ContactPage currentPage={currentPage} onNavigate={navigate} />}
         </main>
 
-        <footer className="site-footer mt-10 py-10 ">
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 ">
-            <div className="grid gap-8 grid-cols-2 sm:grid-cols-3">
-              <div className='col-span-2 sm:col-span-1'>
+        <footer className="site-footer mt-8 -mx-2 sm:-mx-6 lg:-mx-8">
+          <div className="footer-wrap w-full px-4 py-7 sm:px-6 lg:px-8 lg:py-8">
+            <div className="footer-grid flex flex-col gap-6 border-b border-slate-200 pb-6 lg:grid lg:grid-cols-[1.2fr_0.9fr_0.75fr] lg:items-center">
+              <div className="footer-brand">
                 <div className="flex items-center gap-3">
-                  <div style={{ background: '#fb923c', color: '#7c2d12' }} className="flex h-12 w-16 items-center justify-center rounded-2xl">
-                    <FaRocket />
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-orange-100 text-orange-700 shadow-sm">
+                    <FaGem size={16} />
                   </div>
                   <div>
-                    <div className="font-display text-lg font-semibold text-orange-900">RaphTech Studios</div>
-                    <p className="muted">Strategy, design, and delivery for modern brands.</p>
+                    <div className="font-display text-lg font-semibold text-slate-950">RaphTech Studios</div>
+                    <p className="mt-1 max-w-md text-sm leading-6 text-slate-500">Strategy, design, delivery for modern brands that want a calm, reliable digital presence.</p>
                   </div>
                 </div>
-                <div className="mt-6 muted text-sm">
-                  <p>Serving clients globally with a focus on clarity, performance, and long-term support.</p>
+              </div>
+
+              <div className="footer-group">
+                <h4 className="footer-title">Contact</h4>
+                <div className="footer-links mt-3 flex flex-col gap-2">
+                  <a className="footer-link" href="mailto:hello@raphtechstudios.com"><FaEnvelope /> hello@raphtechstudios.com</a>
+                  <a className="footer-link" href="tel:+254748211821"><FaPhone /> +254 748 211 821</a>
+                  <span className="footer-link"><FaMapMarkerAlt /> Nairobi, Kenya</span>
                 </div>
               </div>
 
-              <div className='flex flex-col items-center'>
-                <h4 className="text-lg sm:text-2xl v font-semibold text-orange-900">Services</h4>
-                <ul className="mt-4 space-y-2 text-xs leading-normal sm:text-[16px] muted">
-                  <li>Website Design & Build</li>
-                  <li>Platform Modernization</li>
-                  <li>Ongoing Growth Support</li>
-                </ul>
-              </div>
-
-              <div className='flex flex-col items-center'>
-                <h4 className="text-lg sm:text-2xl font-semibold text-orange-900">Contact</h4>
-                <ul className="mt-4 space-y-2 text-xs sm:text-[16px] muted">
-                  <li className="flex items-center gap-2 "><span className='icon'><FaEnvelope /></span> hello@raphtechstudios.com</li>
-                  <li className="flex items-center gap-2 "><span className='icon'><FaPhone /></span> +254 748 211 821</li>
-                  <li className="flex items-center gap-2 "><span className='icon'><FaMapMarkerAlt /></span> Nairobi, Kenya</li>
-                </ul>
-                <div className="mt-4 flex gap-6  ">
-                  <a className="icon"  aria-label="GitHub"><FaGithub /></a>
-                  <a className="icon" aria-label="LinkedIn"><FaLinkedin /></a>
-                  <a className="icon" aria-label="Twitter"><FaTwitter /></a>
-                  <a className="icon" aria-label="Instagram"><FaInstagram /></a>
-
+              <div className="footer-group">
+                <h4 className="footer-title">Social</h4>
+                <div className="footer-social mt-3 flex items-center gap-2">
+                  <a className="footer-social-link" href="#" aria-label="GitHub"><FaGithub /></a>
+                  <a className="footer-social-link" href="#" aria-label="LinkedIn"><FaLinkedin /></a>
+                  <a className="footer-social-link" href="#" aria-label="Twitter"><FaTwitter /></a>
+                  <a className="footer-social-link" href="#" aria-label="Instagram"><FaInstagram /></a>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 border-t border-slate-200 pt-6 text-sm muted">
-              <div className="flex flex-col gap-2 sm:flex-row items-center justify-between">
-                <p>© 2026 RaphTech Studios  All rights reserved.</p>
-                <p>Designed with care · Built for reliability</p>
-              </div>
+            <div className="footer-meta pt-5 text-xs text-slate-400 sm:flex sm:items-center sm:justify-between">
+              <p>© 2026 RaphTech Studios. All rights reserved.</p>
+              <p>Built to feel calm, clear, and professional.</p>
             </div>
           </div>
         </footer>
+
       </div>
     </div>
   );
@@ -395,30 +392,24 @@ function HomePage({ currentPage, onNavigate }) {
         </div>
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="rounded-lg border border-orange-200 bg-orange-50 p-6 shadow-soft">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">Process</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-slate-950">A clear delivery flow</h2>
-          <p className="mt-4 text-slate-700">
-            We keep the process structured and visible so clients know what happens next at every stage.
-          </p>
-        </div>
+      <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft sm:p-8 process-section">
+        <div className="space-y-4 sm:space-y-6">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">Process</p>
+            <h2 className="mt-3 max-w-xl font-display text-2xl font-semibold leading-tight text-slate-950 sm:text-3xl">A clear delivery flow</h2>
+          </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {process.map((item) => (
-            <article key={item.step} className="rounded-xl border border-orange-200 bg-orange-50 p-5 shadow-soft">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-orange-200 text-orange-950">
-                  <FaCogs />
-                </div>
-                <div>
-                  <div className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-700">Step {item.step}</div>
-                  <h3 className="mt-1 text-xl font-semibold text-slate-950">{item.title}</h3>
-                </div>
-              </div>
-              <p className="mt-4 text-slate-700">{item.text}</p>
-            </article>
-          ))}
+          <div className="grid gap-3 sm:gap-4 md:gap-6 grid-cols-2 md:grid-cols-4">
+            {process.map((item, i) => (
+              <InfoPanel
+                key={item.step}
+                title={`Step ${item.step} — ${item.title}`}
+                text={item.text}
+                img={[week1Img, week2Img, deliveryImg, afterLaunchImg][i]}
+                imgAlt={`Step ${item.step} illustration`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -478,33 +469,33 @@ function AboutPage({ onNavigate }) {
         </article>
 
         <div className="grid gap-4 sm:grid-cols-3">
-          <article className="rounded-xl border border-orange-200 bg-orange-50 p-5 shadow-soft">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-200 text-orange-950">
-              <FaBullseye />
+          <article className="rounded-xl border border-orange-200 bg-white p-5 shadow-soft">
+            <div className="flex justify-center">
+              <img src={missionImg} alt="Mission illustration" className="h-20 w-20 rounded-2xl object-contain sm:h-24 sm:w-24" />
             </div>
-            <h3 className="mt-4 text-2xl font-semibold text-slate-950">Mission</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-700">
-              Design and build web experiences that help serious businesses present themselves with clarity and confidence.
+            <h3 className="mt-4 text-center text-xl font-semibold text-slate-950">Mission</h3>
+            <p className="mt-2 text-center text-sm leading-6 text-slate-700">
+              Build clear websites that help brands stand out.
             </p>
           </article>
 
-          <article className="rounded-2xl border border-orange-200 bg-orange-100 p-5 shadow-soft">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-200 text-orange-950">
-              <FaGem />
+          <article className="rounded-xl border border-orange-200 bg-white p-5 shadow-soft">
+            <div className="flex justify-center">
+              <img src={visionImg} alt="Vision illustration" className="h-20 w-20 rounded-2xl object-contain sm:h-24 sm:w-24" />
             </div>
-            <h3 className="mt-4 text-xl font-semibold text-slate-950">Values</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-700">
-              Clear communication, strong craft, thoughtful decisions, and a bias toward practical delivery.
+            <h3 className="mt-4 text-center text-xl font-semibold text-slate-950">Vision</h3>
+            <p className="mt-2 text-center text-sm leading-6 text-slate-700">
+              Create calm, premium sites people trust fast.
             </p>
           </article>
 
-          <article className="rounded-2xl border border-orange-200 bg-orange-50 p-5 shadow-soft">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-200 text-orange-950">
-              <FaShieldAlt />
+          <article className="rounded-xl border border-orange-200 bg-white p-5 shadow-soft">
+            <div className="flex justify-center">
+              <img src={standardsImg} alt="Standards illustration" className="h-20 w-20 rounded-2xl object-contain sm:h-24 sm:w-24" />
             </div>
-            <h3 className="mt-4 text-xl font-semibold text-slate-950">Standards</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-700">
-              Accessible, responsive, maintainable, and measured against real outcomes rather than decoration alone.
+            <h3 className="mt-4 text-center text-xl font-semibold text-slate-950">Standards</h3>
+            <p className="mt-2 text-center text-sm leading-6 text-slate-700">
+              Keep every build accessible, responsive, and solid.
             </p>
           </article>
         </div>
@@ -554,10 +545,10 @@ function AboutPage({ onNavigate }) {
           </div>
 
           <div className="mt-6 space-y-4">
-            {team.map((person) => (
+            {team.map((person, idx) => (
               <div key={person.name} className="flex items-center gap-4 rounded-xl border border-orange-200 bg-white p-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-300 text-sm font-bold text-orange-950">
-                  {person.initials}
+                <div className="h-14 w-14 overflow-hidden rounded-full bg-slate-50 sm:h-16 sm:w-16">
+                  <img src={testimonialImgs[idx % testimonialImgs.length]} alt={person.name} className="h-full w-full object-cover" />
                 </div>
                 <div>
                   <p className="font-semibold text-slate-950">{person.name}</p>
@@ -659,12 +650,17 @@ function ServicesPage({ onNavigate }) {
         </div>
         <div className="grid gap-4 sm:grid-cols-3">
           {packages.map((pkg) => (
-            <article key={pkg.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
+            <article key={pkg.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
               <h3 className="text-xl font-semibold text-slate-950">{pkg.title}</h3>
               <p className="mt-2 text-sm text-slate-500">{pkg.price}</p>
-              <ul className="mt-4 space-y-2 text-sm text-slate-600">
+              <ul className="mt-4 space-y-3 text-sm text-slate-600">
                 {pkg.items.map((item) => (
-                  <li key={item}>• {item}</li>
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-700">
+                      <FaCheckCircle className="text-xs" />
+                    </span>
+                    <span className="leading-6 text-slate-700">{item}</span>
+                  </li>
                 ))}
               </ul>
             </article>
@@ -672,17 +668,20 @@ function ServicesPage({ onNavigate }) {
         </div>
       </section>
 
-      <section className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft sm:p-8">
-        <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-soft sm:p-8 delivery-section">
+        <div className="space-y-4 sm:space-y-6">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">Delivery</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold text-slate-950">What happens on a typical project</h2>
+            <h2 className="mt-3 max-w-xl font-display text-2xl font-semibold leading-tight text-slate-950 sm:text-3xl">
+              What happens on a typical project
+            </h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <InfoPanel title="Week 1" text="Scope, content direction, goals, and page structure." />
-            <InfoPanel title="Week 2-3" text="Visual direction, page sections, and responsive component work." />
-            <InfoPanel title="Week 4" text="Review, refinement, QA, and launch preparation." />
-            <InfoPanel title="After launch" text="Monitoring, updates, and optional monthly improvements." />
+
+          <div className="grid gap-2 sm:gap-4 md:gap-6 grid-cols-2 md:grid-cols-4">
+            <InfoPanel title="Week 1" text="Scope, content direction, goals, and page structure." img={week1Img} imgAlt="Week 1 illustration" />
+            <InfoPanel title="Week 2-3" text="Visual direction, page sections, and responsive work." img={week2Img} imgAlt="Week 2 illustration" />
+            <InfoPanel title="Week 4" text="Review, refinement, QA, and launch preparation." img={afterLaunchImg} imgAlt="Week 4 illustration" />
+            <InfoPanel title="After launch" text="Monitoring, updates, and optional monthly improvements." img={afterLaunchImg} imgAlt="After launch illustration" />
           </div>
         </div>
       </section>
@@ -722,14 +721,38 @@ function ContactPage({ currentPage }) {
         </form>
 
         <aside className="space-y-6">
-          <div className="rounded-2xl border border-slate-200 panel-dark p-6 shadow-soft">
-            <p className="text-sm uppercase tracking-[0.25em] text-slate-800">Contact</p>
-            <h2 className="mt-3 font-display text-3xl font-semibold text-slate-900">Direct details</h2>
-            <div className="mt-6 space-y-4 text-slate-800">
-              <p><strong className="text-slate-900">Email:</strong> hello@raphtechstudios.com</p>
-              <p><strong className="text-slate-900">Phone:</strong> +254 748 211 821</p>
-              <p><strong className="text-slate-900">Location:</strong> Nairobi, Kenya</p>
-              <p><strong className="text-slate-900">Reply time:</strong> Within 24 business hours</p>
+          <div className="rounded-2xl border border-orange-100 bg-orange-100/70 p-6 shadow-soft sm:p-8">
+            <div className="inline-flex rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-orange-700">
+              Contact
+            </div>
+            <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+              Direct details
+            </h2>
+            <p className="mt-3 max-w-md text-sm leading-6 text-slate-600 sm:text-base">
+              Reach out directly if you want a fast reply and a clear next step.
+            </p>
+
+            <div className="mt-6 divide-y divide-slate-100 overflow-hidden rounded-2xl border border-slate-100 bg-slate-50/70">
+              <div className="px-4 py-4 sm:px-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Email</p>
+                <a className="mt-1 block text-sm font-medium text-slate-900 transition hover:text-orange-700 sm:text-base" href="mailto:hello@raphtechstudios.com">
+                  hello@raphtechstudios.com
+                </a>
+              </div>
+              <div className="px-4 py-4 sm:px-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Phone</p>
+                <a className="mt-1 block text-sm font-medium text-slate-900 transition hover:text-orange-700 sm:text-base" href="tel:+254748211821">
+                  +254 748 211 821
+                </a>
+              </div>
+              <div className="px-4 py-4 sm:px-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Location</p>
+                <p className="mt-1 text-sm font-medium text-slate-900 sm:text-base">Nairobi, Kenya</p>
+              </div>
+              <div className="px-4 py-4 sm:px-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Reply time</p>
+                <p className="mt-1 text-sm font-medium text-slate-900 sm:text-base">Within 24 business hours</p>
+              </div>
             </div>
           </div>
 
@@ -767,7 +790,7 @@ function PageHero({ eyebrow, title, description }) {
         {eyebrow}
       </span>
       <div className="space-y-4">
-        <h1 className="font-display max-w-4xl text-4xl sm:text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl">
+        <h1 className="font-display max-w-4xl text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-slate-950">
           {title}
         </h1>
         <p className="max-w-3xl text-lg leading-8 text-slate-600">{description}</p>
@@ -814,22 +837,17 @@ function SecondaryButton({ children, ...props }) {
   );
 }
 
-function InfoPanel({ title, text }) {
-  // choose an icon by matching title keywords
-  let Icon = FaBullseye;
-  if (/performance|accessibility/i.test(title)) Icon = FaChartLine;
-  if (/reliable|growth|foundations/i.test(title)) Icon = FaShieldAlt;
-
+function InfoPanel({ title, text, img, imgAlt }) {
   return (
-    <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-soft">
-      <div className="flex items-start gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-50 text-orange-700">
-          <Icon />
-        </div>
+    <article className="rounded-lg sm:rounded-xl border border-slate-200 bg-white p-4 sm:p-6 shadow-soft">
+      <div className="flex flex-col items-start gap-4">
         <div>
-          <h3 className="text-2xl font-semibold text-slate-950">{title}</h3>
-          <p className="mt-3 leading-7 text-slate-600">{text}</p>
+          <h3 className="text-lg font-semibold leading-tight text-slate-950 sm:text-2xl">{title}</h3>
+          <p className="mt-2 text-sm leading-6 text-slate-600 sm:mt-3 sm:text-base sm:leading-7">{text}</p>
         </div>
+        {img && (
+          <img src={img} alt={imgAlt || title} className="mt-3 sm:mt-4 w-full max-w-xs rounded-lg object-contain shadow-sm self-center" />
+        )}
       </div>
     </article>
   );
