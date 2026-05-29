@@ -55,3 +55,11 @@ npm run build
 
 - If `VITE_MAPBOX_TOKEN` is missing, the map section shows a fallback message instead of crashing.
 - The site is designed to work well on both desktop and mobile screens.
+
+## Demo
+
+Watch a short demo of the multipage site here:
+
+- https://youtu.be/-XgQYWR_YUA
+
+Screenshots used in the README and documentation are stored in the `riot/screenshots` folder. Add image files there (PNG/JPG) and reference them from this README or other docs as needed.
