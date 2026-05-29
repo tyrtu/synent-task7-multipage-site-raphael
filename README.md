@@ -70,7 +70,7 @@ Screenshots used in the README and documentation are stored in the `screenshots`
 
 | Home | About | Services | Contact |
 | --- | --- | --- | --- |
-| ![Home desktop](screenshots/home-desktop.png) | ![About desktop](screenshots/about-desktop.png) | ![Services desktop](screenshots/services-desktop.png) | ![Contact desktop](screenshots/contact-desktop.png) |
+| ![Home desktop](screenshots/home.png) | ![About desktop](screenshots/about.png) | ![Services desktop](screenshots/services.png) | ![Contact desktop](screenshots/contact.png) |
 
 ### Mobile
 
