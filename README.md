@@ -62,4 +62,18 @@ Watch a short demo of the multipage site here:
 
 - https://youtu.be/-XgQYWR_YUA
 
-Screenshots used in the README and documentation are stored in the `riot/screenshots` folder. Add image files there (PNG/JPG) and reference them from this README or other docs as needed.
+Screenshots used in the README and documentation are stored in the `screenshots` folder. Add image files there (PNG/JPG) and reference them from this README or other docs as needed.
+
+## Screenshots
+
+### Desktop
+
+| Home | About | Services | Contact |
+| --- | --- | --- | --- |
+| ![Home desktop](screenshots/home-desktop.png) | ![About desktop](screenshots/about-desktop.png) | ![Services desktop](screenshots/services-desktop.png) | ![Contact desktop](screenshots/contact-desktop.png) |
+
+### Mobile
+
+| Home | About | Services | Contact |
+| --- | --- | --- | --- |
+| ![Home mobile](screenshots/home-mobile.png) | ![About mobile](screenshots/about-mobile.png) | ![Services mobile](screenshots/services-mobile.png) | ![Contact mobile](screenshots/contact-mobile.png) |
