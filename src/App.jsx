@@ -221,10 +221,10 @@ function App() {
           {path === '/contact' && <ContactPage currentPage={currentPage} onNavigate={navigate} />}
         </main>
 
-        <footer className="site-footer mt-8 -mx-2 sm:-mx-6 lg:-mx-8">
-          <div className="footer-wrap w-full px-4 py-7 sm:px-6 lg:px-8 lg:py-8">
-            <div className="footer-grid flex flex-col gap-6 border-b border-slate-200 pb-6 lg:grid lg:grid-cols-[1.2fr_0.9fr_0.75fr] lg:items-center">
-              <div className="footer-brand">
+        <footer className="mt-8 -mx-2 sm:-mx-6 lg:-mx-8">
+          <div className="w-full px-4 py-7 sm:px-6 lg:px-8 lg:py-8">
+            <div className="flex  flex-col gap-6 border-b border-slate-200 pb-6 lg:grid lg:grid-cols-[1.2fr_0.9fr_0.75fr] lg:items-center">
+              <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-orange-100 text-orange-700 shadow-sm">
                     <FaGem size={16} />
@@ -236,30 +236,31 @@ function App() {
                 </div>
               </div>
 
-              <div className="footer-group">
-                <h4 className="footer-title">Contact</h4>
-                <div className="footer-links mt-3 flex flex-col gap-2">
-                  <a className="footer-link" href="mailto:hello@raphtechstudios.com"><FaEnvelope /> hello@raphtechstudios.com</a>
-                  <a className="footer-link" href="tel:+254748211821"><FaPhone /> +254 748 211 821</a>
-                  <span className="footer-link"><FaMapMarkerAlt /> Nairobi, Kenya</span>
+              <div>
+                <h4 className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-950">Contact</h4>
+                <div className="mt-4 flex flex-col gap-3">
+                  <a href="mailto:hello@raphtechstudios.com" className="flex items-center gap-2 text-sm text-slate-600 hover:text-orange-700 transition"><FaEnvelope /> hello@raphtechstudios.com</a>
+                  <a href="tel:+254748211821" className="flex items-center gap-2 text-sm text-slate-600 hover:text-orange-700 transition"><FaPhone /> +254 748 211 821</a>
+                  <span className="flex items-center gap-2 text-sm text-slate-600"><FaMapMarkerAlt /> Nairobi, Kenya</span>
                 </div>
               </div>
 
-              <div className="footer-group">
-                <h4 className="footer-title">Social</h4>
-                <div className="footer-social mt-3 flex items-center gap-2">
-                  <a className="footer-social-link" href="#" aria-label="GitHub"><FaGithub /></a>
-                  <a className="footer-social-link" href="#" aria-label="LinkedIn"><FaLinkedin /></a>
-                  <a className="footer-social-link" href="#" aria-label="Twitter"><FaTwitter /></a>
-                  <a className="footer-social-link" href="#" aria-label="Instagram"><FaInstagram /></a>
+              <div>
+                <h4 className="text-sm font-semibold uppercase tracking-[0.1em] text-slate-950">Social</h4>
+                <div className="mt-4 flex items-center gap-3">
+                  <a href="#" aria-label="GitHub" className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-slate-600 hover:bg-orange-100 hover:text-orange-700 transition"><FaGithub size={16} /></a>
+                  <a href="#" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-slate-600 hover:bg-orange-100 hover:text-orange-700 transition"><FaLinkedin size={16} /></a>
+                  <a href="#" aria-label="Twitter" className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-slate-600 hover:bg-orange-100 hover:text-orange-700 transition"><FaTwitter size={16} /></a>
+                  <a href="#" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-slate-600 hover:bg-orange-100 hover:text-orange-700 transition"><FaInstagram size={16} /></a>
                 </div>
               </div>
             </div>
 
-            <div className="footer-meta pt-5 text-xs text-slate-400 sm:flex sm:items-center sm:justify-between">
-              <p>© 2026 RaphTech Studios. All rights reserved.</p>
+            <div className="text-center pt-5 text-xs text-slate-400 sm:flex sm:items-center justify-center">
+              <p className='sm:mr-4'>© 2026 RaphTech Studios. All rights reserved.</p>
               <p>Built to feel calm, clear, and professional.</p>
             </div>
+
           </div>
         </footer>
 
@@ -295,8 +296,8 @@ function HomePage({ currentPage, onNavigate }) {
           <div className="grid gap-4 grid-cols-2 xl:grid-cols-4">
             {homeStats.map((item) => (
               <div key={item.label} className="rounded-lg border border-orange-100 bg-orange-50 p-5 shadow-soft">
-                <div className="text-3xl font-semibold tracking-tight text-slate-950">{item.value}</div>
-                <div className="mt-2 text-sm text-slate-500">{item.label}</div>
+                <div className="text-3xl text-center font-semibold tracking-tight text-slate-950">{item.value}</div>
+                <div className="mt-2 text-sm text-center text-slate-500">{item.label}</div>
               </div>
             ))}
           </div>
@@ -310,12 +311,12 @@ function HomePage({ currentPage, onNavigate }) {
                   <p className="text-sm font-medium uppercase tracking-[0.25em] text-slate-400">Featured</p>
                   <h2 className="mt-2 text-2xl font-semibold text-slate-950">Studio snapshot</h2>
                 </div>
-                <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">
+                <span className="rounded-lg bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">
                   Ready to launch
                 </span>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-3 grid-cols-2 ">
                 <MiniFeature title="Clean UI" text="Careful spacing, readable typography, and measured motion." />
                 <MiniFeature title="Responsive" text="Layouts that adapt elegantly from mobile to desktop." />
                 <MiniFeature title="Maintainable" text="Reusable sections that scale with your content." />
@@ -630,10 +631,10 @@ function ServicesPage({ onNavigate }) {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">Service</p>
             <h3 className="mt-3 text-2xl font-semibold text-slate-950">{service.name}</h3>
             <p className="mt-3 text-slate-600">{service.desc}</p>
-            <ul className="mt-5 space-y-3 text-sm text-slate-600">
+            <ul className="flex sm:flex-col mt-5 sm:space-y-3 text-sm text-slate-600">
               {service.bullets.map((bullet) => (
                 <li key={bullet} className="flex items-start gap-3">
-                  <FaCheckCircle className="mt-0.5 shrink-0" style={{ color: 'var(--brand-700)', fontSize: '1rem' }} />
+                  <FaCheckCircle className="mt-0.5 shrink-0" style={{ color: 'var(--brand-700)', fontSize: '0.8rem' }} />
                   <span>{bullet}</span>
                 </li>
               ))}
@@ -642,15 +643,16 @@ function ServicesPage({ onNavigate }) {
         ))}
       </section>
 
-      <section className="grid gap-6 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft lg:grid-cols-[1fr_1fr] lg:p-10">
-        <div>
+      <section className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-8 lg:p-10 shadow-soft">
+        <div className='flex flex-col text-center'>
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-400">Packages</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-slate-950">Choose the right engagement level</h2>
-          <p className="mt-3 text-slate-600">Each package is flexible, but the structure gives clients a clear starting point.</p>
+          <h2 className="mt-3 font-display text-2xl sm:text-3xl font-semibold text-slate-950">Choose the right engagement level</h2>
+          <p className="mt-3 text-sm text-slate-600">Each package is flexible, but the structure gives clients a clear starting point.</p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className='mt-6 sm:mt-8'>
+        <div className="flex overflow-x-auto gap-4 pb-2 sm:grid sm:grid-cols-3 snap-x snap-mandatory sm:snap-none sm:overflow-visible">
           {packages.map((pkg) => (
-            <article key={pkg.title} className="rounded-3xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+            <article key={pkg.title} className="flex-shrink-0 w-80 sm:w-auto snap-start rounded-xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
               <h3 className="text-xl font-semibold text-slate-950">{pkg.title}</h3>
               <p className="mt-2 text-sm text-slate-500">{pkg.price}</p>
               <ul className="mt-4 space-y-3 text-sm text-slate-600">
@@ -665,6 +667,7 @@ function ServicesPage({ onNavigate }) {
               </ul>
             </article>
           ))}
+        </div>
         </div>
       </section>
 
